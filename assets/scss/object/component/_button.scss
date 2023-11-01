@@ -1,0 +1,70 @@
+@use "../../global" as g;
+
+//ハンバーガーメニューボタンデザイン
+.hamburger-btn {
+  width: 5rem;
+  height: 5rem;
+  position: relative;
+  transition: all 0.3s;
+  @include g.breakpoint(pc) {
+    display: none;
+  }
+  span {
+    position: absolute;
+    content: "";
+    width: 2.3rem;
+    height: 0.2rem;
+    background-color: g.$cBlue01;
+    transition: 0.2s;
+    top: 1.5rem;
+    left: 1.5rem;
+    &:first-child {
+      top: 1.5rem;
+    }
+    &:nth-child(2) {
+      top: 2.4rem;
+    }
+    &:last-child {
+      top: 3.3rem;
+    }
+  }
+  &.is-activ {
+    background: g.$cBlue01;
+    span {
+      background-color: g.$cWhite;
+      &:first-child {
+        transform: rotate(45deg);
+        top: 2.4rem;
+      }
+      &:nth-child(2) {
+        width: 0;
+      }
+      &:last-child {
+        transform: rotate(-45deg);
+        top: 2.4rem;
+      }
+    }
+  }
+}
+
+.c-button {
+  margin: 0.5em 0;
+  display: inline-block;
+  padding: 1rem 1.8rem;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: 0.5s;
+  @include g.breakpoint(tab) {
+    font-size: 1.8rem;
+  }
+  &__big--blue {
+    @extend .c-button;
+    background-color: g.$cBlue01;
+    color: g.$cWhite;
+    text-decoration: none;
+    @include g.breakpoint(tab) {
+      padding: 2rem 3.7rem;
+      margin: 1.3em 0 0.5em;
+    }
+  }
+}

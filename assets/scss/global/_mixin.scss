@@ -1,0 +1,17 @@
+@use 'variables' as var;
+/*=========================
+mixin
+=========================*/
+/** メディアクエリ **/
+@mixin breakpoint($point) {
+    @if $point == tab {
+        @media (min-width : var.$tab) {
+            @content;
+        }
+    }
+    @if $point == pc {
+        @media (min-width : var.$pc) {
+            @content;
+        }
+    }
+}

@@ -1,0 +1,176 @@
+@use "../global" as g;
+
+.l-header {
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: g.$cWhite;
+  z-index: 999;
+  box-shadow: 0 3px 6px -2px rgba(0, 0, 0, 0.1);
+  @include g.breakpoint(pc) {
+    height: 7rem;
+  }
+  &__logo {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    line-height: 1.3;
+    font-weight: 900;
+    span {
+      display: none;
+      @include g.breakpoint(pc) {
+        display: block;
+        margin-left: 16px;
+        white-space: nowrap;
+        font-size: 14px;
+        font-size: 1.4rem;
+        strong {
+          font-size: 1.8rem;
+        }
+      }
+    }
+    @include g.breakpoint(pc) {
+      margin-left: 2.1rem;
+    }
+    img {
+      height: 3rem;
+      width: auto;
+      @include g.breakpoint(pc) {
+        height: 3.3rem;
+      }
+    }
+  }
+}
+
+
+//メニュー
+.p-menus-wrap {
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  top: 4.9rem;
+  left: 0;
+  display: none;
+  height:100%;
+  overflow-y: scroll;
+  @include g.breakpoint(pc) {
+    display: block;
+    position: initial;
+    height: auto;
+    overflow-y: initial;
+  }
+}
+.p-menu {
+  background-color: g.$cWhite;
+  @include g.breakpoint(pc) {
+    display: flex;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: g.$cBlack03;
+  }
+  li {
+    white-space: nowrap;
+
+  }
+  &__list {
+    position: relative;
+    & > a {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      font-weight: 600;
+      @include g.breakpoint(pc) {
+        height: 7rem;
+        padding: 0 1.5rem;
+      }
+      &:hover {
+        background-color: g.$cBlue04;
+        @include g.breakpoint(pc) {
+          background-color: g.$cBlue02;
+        }
+      }
+    }
+    //子要素を持っているメニューに＋マーク付与
+    &.menu-item-has-children > a {
+        position: relative;
+        &::before,
+        &::after {
+          display: block;
+          content: "";
+          background-color: g.$cBlack03;
+          position: absolute;
+          right: 1rem;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        &::before {
+          width: 2.4rem;
+          height: 2px;
+        }
+        &::after {
+          height: 2.4rem;
+          width: 2px;
+          right: 2rem;
+        }
+    
+        @include g.breakpoint(pc) {
+          &::before,
+          &::after {
+            display: none;
+          }
+        }
+      }
+    &--special {
+      display: none;
+      @include g.breakpoint(pc) {
+        display: block;
+      }
+      a {
+        @include g.breakpoint(pc) {
+          background-color: g.$cBlue01;
+          color: g.$cWhite;
+        }
+        &:hover {
+          color: g.$cWhite;
+          background-color: g.$cBlue01;
+        }
+      }
+    }
+    &.is-activ {
+      a::after {
+        display: none;
+      }
+    }
+  }
+}
+.sub-menu {
+  display: none;
+  transform: translateZ(0);
+  @include g.breakpoint(pc) {
+    position: absolute;
+    top: 7rem;
+    left: 0;
+  }
+  a {
+    display: block;
+    padding: 1rem 1rem 1rem 2.5rem;
+    @include g.breakpoint(pc) {
+      padding: 15px 60px 15px 15px;
+      background-color: g.$cBlue03;
+    }
+    &:hover {
+      background-color: g.$cBlue04;
+      @include g.breakpoint(pc) {
+        background-color: g.$cWhite;
+        color: g.$cBlue01;
+      }
+    }
+  }
+}

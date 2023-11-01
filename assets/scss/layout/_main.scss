@@ -1,0 +1,15 @@
+@use '../global' as g;
+
+.l-main {
+    padding-top: 5rem;
+    @include g.breakpoint(pc) {
+        padding-top: 7rem;
+    }
+}
+.l-content {
+    padding: 4em 0;
+    &__inner {
+        max-width: 107.8rem;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,35 @@
+@use '../global' as g;
+/*=========================
+base
+=========================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-size: 10px;
+}
+
+body {
+    line-height: 1.7;
+    font-family: "Noto Sans JP", MyYuGothicM, YuGothic, -apple-system, BlinkMacSystemFont, "Hiragino kaku Gothic ProN", Meiryo, Verdana, arial, helvetica, sans-serif;
+    color: g.$cBlack02;
+    font-size: 1.6rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    &.is-fixed {
+        overflow-y: hidden;
+    }
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+}

@@ -899,7 +899,7 @@ button {
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-@media (min-width: 766px) {
+@media (min-width: 819px) {
   .c-button, .c-button__big--blue {
     font-size: 1.8rem;
   }
@@ -909,7 +909,7 @@ button {
   color: #fff;
   text-decoration: none;
 }
-@media (min-width: 766px) {
+@media (min-width: 819px) {
   .c-button__big--blue {
     padding: 2rem 3.7rem;
     margin: 1.3em 0 0.5em;

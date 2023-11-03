@@ -155,7 +155,6 @@
 
 .sub-menu {
   display: none;
-  // overflow: hidden;
   @include g.breakpoint(pc) {
     z-index: -1;
     opacity: 0;
@@ -196,10 +195,6 @@
   0% {
     display: none;
     transform: translateY(-30%);
-    opacity: 0;
-  }
-  1% {
-    display: block;
     opacity: 0;
   }
   100% {

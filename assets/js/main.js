@@ -34,7 +34,7 @@ function mediaQueriesWin() {
         $(".menu-item-has-children>a").off('click');
         $(".menu-item-has-children>a").off('hover');
         $(".menu-item-has-children").removeClass('is-activ'); 
-        $(".menu-item-has-children").children('ul').css("display",""); 
+        $(".menu-item-has-children").children('ul').css("display",""); //p-menuの表示なくす
 
         $(".menu-item-has-children>a").on('click', function() {
             let parentElem = $(this).parent(); //menu-item-has-childrenのこと
@@ -47,13 +47,13 @@ function mediaQueriesWin() {
         $(".menu-item-has-children>a").off('click');
         $(".menu-item-has-children>a").off('hover');
         $(".menu-item-has-children").removeClass('is-activ'); 
-        $(".menu-item-has-children").children('ul').css("display",""); 
+        $(".menu-item-has-children").children('ul').css("display",""); //p-menuの表示なくす
         $(".menu-item-has-children>a").hover(
             function(){
                 let parentElem = $(this).parent(); //menu-item-has-childrenのこと
                 $(parentElem).toggleClass('is-activ');
                 $(parentElem).children('ul').stop().slideToggle('fast');
-            }
+                }
             )
     }else {
         //.menu-item-has-childrenクラスがついたaタグのhoverイベントを無効化
@@ -61,12 +61,6 @@ function mediaQueriesWin() {
         $(".menu-item-has-children>a").off('hover');
         $(".menu-item-has-children").removeClass('is-activ'); 
         $(".menu-item-has-children").children('ul').css("display",""); 
-        //パソコン時のホバーアクション
-        $(".menu-item-has-children>a").hover(
-            function(){
-                $(this).parent().toggleClass('is-activ'); //menu-item-has-childrenにクラス付与
-            }
-        )
     }
 }
 $(window).resize(function() {

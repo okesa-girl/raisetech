@@ -799,10 +799,6 @@ button {
             transform: translateY(-30%);
     opacity: 0;
   }
-  1% {
-    display: block;
-    opacity: 0;
-  }
   100% {
     display: block;
     -webkit-transform: translateY(0);
@@ -815,10 +811,6 @@ button {
     display: none;
     -webkit-transform: translateY(-30%);
             transform: translateY(-30%);
-    opacity: 0;
-  }
-  1% {
-    display: block;
     opacity: 0;
   }
   100% {

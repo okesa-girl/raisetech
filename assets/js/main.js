@@ -3,6 +3,7 @@ $('.js-hamburger').on('click', function () {
     $('body').toggleClass('is-fixed');
     $(this).toggleClass('is-activ');
     $(this).next().slideToggle();
+    return false;
 });
 
 

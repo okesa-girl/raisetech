@@ -97,6 +97,13 @@
     }
     //子要素を持っているメニューに＋マーク付与
     &.menu-item-has-children {
+      &.is-open{
+        a {
+          &::after{
+            display: none;
+          }
+        }
+      }
       & > a {
         position: relative;
         z-index: 10;
@@ -126,6 +133,7 @@
             display: none;
           }
         }
+       
       }
     }
     &--special {
@@ -144,12 +152,7 @@
         }
       }
     }
-    //.p-menu__listのsub-menuが開いている時は－にする。
-    &.is-activ {
-      a::after {
-        display: none;
-      }
-    }
+  
   }
 }
 

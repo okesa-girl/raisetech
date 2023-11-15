@@ -699,6 +699,9 @@ button {
     background-color: #D4F1F8;
   }
 }
+.p-menu__list.menu-item-has-children.is-open a::after {
+  display: none;
+}
 .p-menu__list.menu-item-has-children > a {
   position: relative;
   z-index: 10;
@@ -744,9 +747,6 @@ button {
 .p-menu__list--special a:hover {
   color: #fff;
   background-color: #2498B3;
-}
-.p-menu__list.is-activ a::after {
-  display: none;
 }
 
 .sub-menu {
@@ -870,21 +870,21 @@ button {
 .hamburger-btn span:last-child {
   top: 3.3rem;
 }
-.hamburger-btn.is-activ {
+.hamburger-btn.is-open {
   background: #2498B3;
 }
-.hamburger-btn.is-activ span {
+.hamburger-btn.is-open span {
   background-color: #fff;
 }
-.hamburger-btn.is-activ span:first-child {
+.hamburger-btn.is-open span:first-child {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   top: 2.4rem;
 }
-.hamburger-btn.is-activ span:nth-child(2) {
+.hamburger-btn.is-open span:nth-child(2) {
   width: 0;
 }
-.hamburger-btn.is-activ span:last-child {
+.hamburger-btn.is-open span:last-child {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
   top: 2.4rem;
